@@ -90,7 +90,7 @@ public class App {
 
     // 10. Convert Celsius to Fahrenheit
     public double celsiusToFahrenheit(double celsius) {
-        double transform = (celsius * (9/5)) + 32;
+        double transform = (celsius * 1.8) + 32;
         return transform;
     }
 }
