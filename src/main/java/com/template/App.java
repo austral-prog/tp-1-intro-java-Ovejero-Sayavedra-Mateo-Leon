@@ -33,36 +33,22 @@ public class App {
 
     // 4. Factorial of a Number
     public int factorial(int n) {
-        if(n == 0 || n == 1 ){
-            return 1;
-        }
-        if(n<0){
-            return 1;
-        }
-        if(n > 1){
-            int resultado = 1;
-            for (int i = 1; i <= n; i++){
-                resultado *= n;
-            }
-            return resultado;
-        }
-    return 1;
+        if(n == 0 || n == 1 ){return 1;}
+        int resultado = 1;
+        for (int i = 2; i <= n; i++){resultado *= i;}
+        return resultado;
     }
 
     // 5. Count Characters in a String
     public int countChars(String input) {
-        int contador = 0;
-        for(int i = 0; i <= input.length(); i++){
-            contador += i;
-        }
-        return contador;
+        return input.length();
     }
 
     // 6. Reverse a String
     public String reverse(String input) {
         String palabra_inversa = "";
-        for (int i = 0; i < input.length(); i++) {
-            palabra_inversa = palabra_inversa + input.charAt(i);
+        for (int i = input.length() - 1; i >= 0; i--) {
+            palabra_inversa += input.charAt(i);
         }
         return palabra_inversa;
     }
