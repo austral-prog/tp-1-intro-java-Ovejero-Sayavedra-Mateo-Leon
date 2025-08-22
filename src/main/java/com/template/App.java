@@ -107,10 +107,13 @@ public class App {
 
     // 12. Find the Largest Element in a List
     public int findMax(List<Integer> list) {
+        if(list.size()==0){
+            throw new IllegalArgumentException("Size of list less than 1");
+        }
         int minValue = list.getFirst();
         for (int i = 1; i < list.size(); i++) {
-            if(i > minValue){
-                minValue = i;
+            if(list.get(i) > minValue){
+                minValue = list.get(i);
             }
         }
         return minValue;
@@ -120,8 +123,8 @@ public class App {
     public List<Integer> filterEvenNumbers(List<Integer> list) {
         List<Integer> evenNumbers = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
-            if(i % 2 == 0){
-                evenNumbers.add(i);
+            if((list.get(i) % 2) == 0){
+                evenNumbers.add(list.get(i));
             }
         }
         return evenNumbers;
@@ -181,9 +184,9 @@ public class App {
     // 21. Iterate Over a Map
     public List<String> iterateMap(Map<String, String> map) {
         List<String> result = new ArrayList<>();
-        
-        for (String key : map.keySet()) {
-            result.add(key + "->" + map.keySet());
+
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            result.add(entry.getKey() + " -> " + entry.getValue());
         }
 
         return result;
